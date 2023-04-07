@@ -12,10 +12,10 @@
       </div>
     
     <form class="form" id="form">
-      <input type="text" placeholder="Имя" name="name" id="name">
-      <input type="password" placeholder="Пароль" name="password" id="password">
-      <input type="text" name="number" id="phone" placeholder="+998*******" onkeypress='return event.charCode >= 48 && event.charCode <= 57' pattern="[0-9]*">
-      <input type="email" placeholder="example@gmail.com" id="email">
+      <input type="text" placeholder="Имя" name="name" id="name" required >
+      <input type="password" placeholder="Пароль" name="password" id="password" required >
+      <input type="text" name="number" id="phone" placeholder="+998*******" onkeypress='return event.charCode >= 48 && event.charCode <= 57' pattern="[0-9]*" required >
+      <input type="email" placeholder="example@gmail.com" id="email" required >
       <input type="submit" placeholder="Отправить" name="submit" id="submit">
     </form>
 
