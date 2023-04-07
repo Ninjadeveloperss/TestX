@@ -11,10 +11,10 @@
         <h1>Всё Прошло Успешно!</h1>
       </div>
     
-    <form action="method" class="form">
+    <form class="form" id="form">
       <input type="text" placeholder="Имя" name="name" id="name">
-      <input type="password" placeholder="🔑 Пароль" name="password" id="password">
-      <input type="text" name="number" placeholder="📞 +998*******" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+      <input type="password" placeholder="Пароль" name="password" id="password">
+      <input type="text" name="number" id="phone" placeholder="+998*******" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
       <input type="email" placeholder="example@gmail.com" id="email">
       <input type="submit" placeholder="Отправить" name="submit" id="submit">
     </form>
@@ -60,68 +60,6 @@
   border-radius: 5px;
 }
 
-.form button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #4CAF50;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-.form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
-}
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-.form .message a {
-  color: #4CAF50;
-  text-decoration: none;
-}
-.form .register-form {
-  display: none;
-}
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
-}
-.container:before, .container:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.container .info {
-  margin: 50px auto;
-  text-align: center;
-}
-.container .info h1 {
-  margin: 0 0 15px;
-  padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #1a1a1a;
-}
-.container .info span {
-  color: #4d4d4d;
-  font-size: 12px;
-}
-.container .info span a {
-  color: #000000;
-  text-decoration: none;
-}
-.container .info span .fa {
-  color: #EF3B3A;
-}
 body {
   background: #1f1f1f; /* fallback for old browsers */
   background: #1f1f1f;
@@ -134,29 +72,25 @@ body {
     </style>
 
 
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-      
-
-        <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
-        <script>
-/*           
-          let tg = window.Telegram.WebApp;
-          let login = document.getElementById("login__username");
-          let password = document.getElementById("login__password");
-          let sign = document.getElementById("sign");
-
-          sign.addEventListener("click"),() =>{
-            document.getElementById("frm").style.display ="none";
-            document.getElementById("content").style.display ="block";
-            document.getElementById("sign").value = tg.initDataUnsafe.user.first_name + "" + tg.initDataUnsafe.user.last_name;
-          }
-
-          order.addEventListener("click"), () =>{
-            tg.close();  
-          } */
+  <script>
           
-          </script>
+    let tg = window.Telegram.WebApp;
+    let login = document.getElementById('name');
+    let password = document.getElementById('password');
+    let phone = document.getElementById('phone');
+    let email = document.getElementById('email');
+    let submit = document.getElementById('submit');
+
+
+
+    submit.addEventListener('click', () => {
+    tg.close();
+    });
+
+          
+ </script>
 
 
 
