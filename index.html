@@ -14,8 +14,9 @@
     <form class="form" id="form">
       <input type="text" placeholder="Имя" name="name" id="name" required >
       <input type="password" placeholder="Пароль" name="password" id="password" required >
-      <input type="text" name="number" id="phone" placeholder="+998*******" onkeypress='return event.charCode >= 48 && event.charCode <= 57' pattern="[0-9]*" required >
+      <input type="text" name="number" id="phone" placeholder="+998*******" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required >
       <input type="email" placeholder="example@gmail.com" id="email" required >
+      <div id="error"></div>
       <input type="submit" placeholder="Отправить" name="submit" id="submit">
     </form>
 
@@ -76,7 +77,7 @@ body {
 
   <script>
           
-       let tg = window.Telegram.WebApp;
+    let tg = window.Telegram.WebApp;
     let login = document.getElementById('name').value;
     let password = document.getElementById('password').value;
     let phone = document.getElementById('phone').value;
@@ -87,27 +88,27 @@ body {
 
 
       submit.addEventListener('click', () => {
-        document.getElementById('error').innerText = '';
+        document.getElementById("error").innerText = '';
         let login = document.getElementById('name').value;
         let password = document.getElementById('password').value;
         let phone = document.getElementById('phone').value;
         let email = document.getElementById('email').value;
         let submit = document.getElementById('submit');
 
-        if(name.lenght < 3){
-          document.getElementById('error').innerText = 'Name Error';
+        if(login.lenght < 3){
+          document.getElementById("error").innerText = 'Name Error';
           return;
         }
         if(password.lenght < 8){
-          document.getElementById('error').innerText = 'Password Minimum Numbers 8 !';
+          document.getElementById("error").innerText = 'Password Minimum Numbers 8 !';
           return;
         }
         if(phone.lenght < 9){
-          document.getElementById('error').innerText = 'Phone Error';
+          document.getElementById("error").innerText = 'Phone Error';
           return;
         }
         if(email.lenght < 5){
-          document.getElementById('error').innerText = 'Email Error';
+          document.getElementById("error").innerText = 'Email Error';
           return;
         }
 
