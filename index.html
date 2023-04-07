@@ -30,7 +30,7 @@
       }
       @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-.login-page {
+.name-page {
   width: 360px;
   padding: 8% 0 0;
   margin: auto;
@@ -78,7 +78,7 @@ body {
   <script>
           
     let tg = window.Telegram.WebApp;
-    let login = document.getElementById('name').value;
+    let name = document.getElementById('name').value;
     let password = document.getElementById('password').value;
     let phone = document.getElementById('phone').value;
     let email = document.getElementById('email').value;
@@ -89,13 +89,13 @@ body {
 
       submit.addEventListener('click', () => {
         document.getElementById("error").innerText = '';
-        let login = document.getElementById('name').value;
+        let name = document.getElementById('name').value;
         let password = document.getElementById('password').value;
         let phone = document.getElementById('phone').value;
         let email = document.getElementById('email').value;
         let submit = document.getElementById('submit');
 
-        if(login.lenght < 3){
+        if(name.lenght < 3){
           document.getElementById("error").innerText = 'Name Error';
           return;
         }
