@@ -76,18 +76,56 @@ body {
 
   <script>
           
-    let tg = window.Telegram.WebApp;
+       let tg = window.Telegram.WebApp;
     let login = document.getElementById('name').value;
     let password = document.getElementById('password').value;
     let phone = document.getElementById('phone').value;
     let email = document.getElementById('email').value;
     let submit = document.getElementById('submit');
+    tg.expand();
 
 
-    if (login && password && phone && email){
+
       submit.addEventListener('click', () => {
+        document.getElementById('error').innerText = '';
+        let login = document.getElementById('name').value;
+        let password = document.getElementById('password').value;
+        let phone = document.getElementById('phone').value;
+        let email = document.getElementById('email').value;
+        let submit = document.getElementById('submit');
+
+        if(name.lenght < 3){
+          document.getElementById('error').innerText = 'Name Error';
+          return;
+        }
+        if(password.lenght < 8){
+          document.getElementById('error').innerText = 'Password Minimum Numbers 8 !';
+          return;
+        }
+        if(phone.lenght < 9){
+          document.getElementById('error').innerText = 'Phone Error';
+          return;
+        }
+        if(email.lenght < 5){
+          document.getElementById('error').innerText = 'Email Error';
+          return;
+        }
+
+
+          let data = {
+            name: name,
+            password: password,
+            phone: phone,
+            email: email
+          }
+
+        tg.sendData(JSON.stringify(data));
       tg.close();
-    });
+      });
+
+
+
+
           
  </script>
 
