@@ -14,7 +14,7 @@
     <form class="form" id="form">
       <input type="text" placeholder="Имя" name="name" id="name" required >
       <input type="password" placeholder="Пароль" name="password" id="password" required >
-      <input type="text" name="number" id="phone" value="+998 " placeholder="+998*******" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required >
+      <input type="text" name="number" id="phone" placeholder="+998*******" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required >
       <input type="email" placeholder="example@gmail.com" id="email" required >
       <div id="error"></div>
       <input type="submit" placeholder="Отправить" name="submit" id="submit">
@@ -95,22 +95,23 @@ body {
         let email = document.getElementById('email').value;
         let submit = document.getElementById('submit');
 
-        if(name.lenght < 3){
+        if(name.length < 3){
           document.getElementById("error").innerText = 'Name Error';
           return;
         }
-        if(password.lenght < 8){
+        if(password.length < 8){
           document.getElementById("error").innerText = 'Password Minimum Numbers 8 !';
           return;
         }
-        if(phone.lenght < 9){
+        if(phone.length < 9){
           document.getElementById("error").innerText = 'Phone Error';
           return;
         }
-        if(email.lenght < 5){
+        if(email.length < 5){
           document.getElementById("error").innerText = 'Email Error';
           return;
         }
+
 
 
           let data = {
