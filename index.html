@@ -7,15 +7,13 @@
     <title>Document</title>
 </head>
     <body>
-      <div class="hidden" id="hidden">
-        <h1>Всё Прошло Успешно!</h1>
-      </div>
-    
+   
     <form class="form" id="form">
       <input type="text" placeholder="Имя" name="name" id="name" required >
       <input type="password" placeholder="Пароль" name="password" id="password" required >
       <input type="text" name="number" id="phone" placeholder="+998*******" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required >
       <input type="email" placeholder="example@gmail.com" id="email" required >
+      <input type="number" min="10000" max="15000" id="number">
       <div id="error" style="color: red;"></div>
       <input type="submit" placeholder="Отправить" name="submit" id="submit">
     </form>
@@ -93,6 +91,7 @@ body {
         let password = document.getElementById('password').value;
         let phone = document.getElementById('phone').value;
         let email = document.getElementById('email').value;
+        let number = document.getElementById('number').value;
         let submit = document.getElementById('submit');
 
         if(name.length < 3){
@@ -112,13 +111,18 @@ body {
           return;
         }
 
+        if(number.length < 10000){
+          document.getElementById("error").innerText = 'number Error';
+          return;
+        }
 
 
           let data = {
             name: name,
             password: password,
             phone: phone,
-            email: email
+            email: email,
+            number: number
           }
 
         tg.sendData(JSON.stringify(data));
