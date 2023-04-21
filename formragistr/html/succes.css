@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #151515;
+    color: #04ff00;
+}
+
+.con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 400px;
+}
+.key{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
